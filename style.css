@@ -1,0 +1,427 @@
+/* ==========================================================================
+   1. Сброс стилей и глобальные настройки
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавный скролл по якорным ссылкам */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #2b2b2b;
+    /* Основной градиент всей страницы — переход от света к тьме */
+    background: linear-gradient(to bottom, 
+        #fff5f5 0%,    /* Старт: нежно-розовый */
+        #ffeded 15%,   /* Зона Любви */
+        #f3e8ee 35%,   /* Переходная зона */
+        #3a2832 55%,   /* Точка перелома */
+        #1a0f15 75%,   /* Зона Ненависти */
+        #0d060a 100%   /* Эпилог и футер */
+    );
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Навигация (Шапка)
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Эффект размытия стекла */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   3. Базовые стили секций (Общие)
+   ========================================================================== */
+section {
+    min-height: 100vh; /* Каждая секция занимает весь экран */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+article {
+    max-width: 700px;
+    width: 100%;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   4. Специфические стили для тематических зон
+   ========================================================================== */
+
+/* --- ЗОНА: ОБЛОЖКА --- */
+#intro {
+    color: #4a1525;
+}
+#intro h1 {
+    font-size: 3.5rem;
+}
+#intro a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff4d6d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
+    transition: transform 0.3s ease;
+}
+#intro a:hover {
+    transform: translateY(-3px);
+}
+
+/* --- ЗОНА: ЛЮБОВЬ (Светлая, теплая) --- */
+#love {
+    color: #5c1d31;
+}
+#love figure {
+    margin-top: 30px;
+}
+#love img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(255, 182, 193, 0.4);
+}
+#love figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 10px;
+    color: #a36376;
+}
+
+/* --- ЗОНА: ТОЧКА НЕВОЗВРАТА (Сумерки, кризис) --- */
+#turning-point {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2); /* Легкое затемнение фона */
+}
+blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    border-left: 4px solid #ff4d6d;
+    padding-left: 20px;
+    margin: 30px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+/* --- ЗОНА: НЕНАВИСТЬ (Темная, агрессивная) --- */
+#hate {
+    color: #ff4d6d; /* Кроваво-красный текст на темном фоне */
+}
+#hate p {
+    color: #e0e0e0;
+}
+aside {
+    background: rgba(255, 77, 109, 0.1);
+    border: 1px solid #ff4d6d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+aside p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #ff859b;
+}
+
+#hate img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-top: 25px;
+    border: 1px solid rgba(255, 77, 109, 0.3); /* Тонкая багровая рамка */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Глубокая тень */
+}
+
+#hate figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 10px;
+    color: #5c414f;
+}
+
+
+/* --- ЗОНА: ЭПИЛОГ (Опустошение, финал) --- */
+#epilogue {
+    color: #a0a0a0;
+}
+#epilogue h2 {
+    color: #fff;
+}
+
+/* ==========================================================================
+   5. Подвал и форма подписки
+   ========================================================================== */
+footer {
+    background: #050204;
+    color: #666;
+    padding: 60px 20px 20px;
+    text-align: center;
+}
+
+#subscribe {
+    max-width: 400px;
+    margin: 0 auto 40px;
+    min-height: auto;
+    padding: 0;
+}
+#subscribe h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+#subscribe form {
+    display: flex;
+    gap: 10px;
+}
+
+#subscribe input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+#subscribe button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#subscribe button:hover {
+    background: #ff4d6d;
+}
+
+
+/* Начальное состояние элементов до появления */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Класс, который добавит JavaScript при прокрутке */
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   8. Секция цитат и стихов
+   ========================================================================== */
+#quotes-hub {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4); /* Затемнение фона для лучшей читаемости */
+}
+
+.quotes-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.quotes-intro {
+    color: #a0a0a0;
+    margin-bottom: 50px !important;
+}
+
+/* Сетка для карточек */
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+/* Базовый стиль карточки */
+.quote-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Теги на карточках */
+.quote-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.quote-text {
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.quote-author {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Стилизация карточек под разные этапы истории */
+.love-theme {
+    border-left: 4px solid #ff4d6d;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.05);
+}
+.love-theme .quote-tag { color: #ff4d6d; }
+.love-theme:hover { box-shadow: 0 15px 30px rgba(255, 77, 109, 0.1); }
+
+.crisis-theme {
+    border-left: 4px solid #a36376;
+}
+.crisis-theme .quote-tag { color: #a36376; }
+
+.hate-theme {
+    border-left: 4px solid #3a2832;
+    background: rgba(0, 0, 0, 0.2);
+}
+.hate-theme .quote-tag { color: #5c414f; }
+.hate-theme .quote-text { color: #b0b0b0; }
+
+
+/* ==========================================================================
+   6. Адаптивная мобильная верстка (Экран менее 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Настройки секций: уменьшаем вертикальные отступы */
+    section {
+        padding: 60px 16px; /* Минимальный безопасный отступ от краев экрана */
+        min-height: calc(100vh - 50px); /* Коррекция под высоту мобильного экрана */
+    }
+
+    /* Адаптация типографики под мобильные экраны */
+    #intro h1 {
+        font-size: 2.2rem; /* Уменьшаем главный заголовок, чтобы он не переносился криво */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Уменьшаем заголовки секций */
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1rem; /* Стандартный комфортный размер для чтения с телефона */
+        margin-bottom: 20px;
+        text-align: left; /* На смартфонах длинный текст по центру читать тяжело, выравниваем по левому краю */
+    }
+
+    /* Компактное навигационное меню */
+    nav ul {
+        padding: 10px 5px;
+        overflow-x: auto; /* Позволяет прокручивать меню пальцем по горизонтали, если оно не влезает */
+        white-space: nowrap; /* Запрещает перенос пунктов меню на новую строку */
+        justify-content: flex-start; /* Прижимает меню к левому краю для удобства скролла */
+        -webkit-overflow-scrolling: touch; /* Плавный скролл меню на iOS */
+    }
+
+    nav a {
+        margin: 0 10px; /* Сужаем отступы между ссылками */
+        font-size: 0.75rem; /* Делаем шрифт меню чуть компактнее */
+    }
+
+    /* Адаптация специфических блоков */
+    #love img {
+        width: 100%; /* Картинка занимает всю ширину доступного экрана */
+        max-width: 100%;
+    }
+
+    blockquote {
+        font-size: 1.2rem; /* Уменьшаем цитату */
+        margin: 20px 0;
+        padding-left: 15px;
+    }
+
+    aside {
+        margin-top: 20px;
+        padding: 12px;
+    }
+
+    /* Форма подписки: перестраиваем инпут и кнопку в одну колонку */
+    #subscribe form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #subscribe input, 
+    #subscribe button {
+        width: 100%; /* Элементы растягиваются на всю ширину мобильного экрана */
+        border-radius: 12px; /* Чуть уменьшаем радиус скругления для лучшего вида */
+    }
+}
+
+/* Дополнительная микро-коррекция для очень маленьких экранов (до 480px) */
+@media screen and (max-width: 480px) {
+    #intro h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
